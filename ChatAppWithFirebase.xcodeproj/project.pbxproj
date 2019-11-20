@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		181FDD532385412300111ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD522385412300111ED7 /* AppDelegate.swift */; };
 		181FDD552385412300111ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD542385412300111ED7 /* SceneDelegate.swift */; };
-		181FDD572385412300111ED7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD562385412300111ED7 /* ViewController.swift */; };
+		181FDD572385412300111ED7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD562385412300111ED7 /* WelcomeViewController.swift */; };
 		181FDD5A2385412300111ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181FDD582385412300111ED7 /* Main.storyboard */; };
 		181FDD5C2385412400111ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181FDD5B2385412400111ED7 /* Assets.xcassets */; };
 		181FDD5F2385412400111ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181FDD5D2385412400111ED7 /* LaunchScreen.storyboard */; };
+		181FDD6B2385421000111ED7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD6A2385421000111ED7 /* RegisterViewController.swift */; };
+		181FDD6D2385422100111ED7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD6C2385422100111ED7 /* LoginViewController.swift */; };
+		181FDD6F2385423000111ED7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD6E2385423000111ED7 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		181FDD4F2385412300111ED7 /* ChatAppWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		181FDD522385412300111ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		181FDD542385412300111ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		181FDD562385412300111ED7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		181FDD562385412300111ED7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		181FDD592385412300111ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		181FDD5B2385412400111ED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181FDD5E2385412400111ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181FDD602385412400111ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181FDD6A2385421000111ED7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		181FDD6C2385422100111ED7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		181FDD6E2385423000111ED7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		181FDD512385412300111ED7 /* ChatAppWithFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				181FDD522385412300111ED7 /* AppDelegate.swift */,
-				181FDD542385412300111ED7 /* SceneDelegate.swift */,
-				181FDD562385412300111ED7 /* ViewController.swift */,
-				181FDD582385412300111ED7 /* Main.storyboard */,
-				181FDD5B2385412400111ED7 /* Assets.xcassets */,
-				181FDD5D2385412400111ED7 /* LaunchScreen.storyboard */,
+				181FDD692385419800111ED7 /* Model */,
+				181FDD672385418500111ED7 /* Controller */,
+				181FDD682385419200111ED7 /* View */,
+				181FDD662385417C00111ED7 /* Supporting Files */,
 				181FDD602385412400111ED7 /* Info.plist */,
 			);
 			path = ChatAppWithFirebase;
+			sourceTree = "<group>";
+		};
+		181FDD662385417C00111ED7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				181FDD522385412300111ED7 /* AppDelegate.swift */,
+				181FDD542385412300111ED7 /* SceneDelegate.swift */,
+				181FDD5B2385412400111ED7 /* Assets.xcassets */,
+				181FDD5D2385412400111ED7 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		181FDD672385418500111ED7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				181FDD562385412300111ED7 /* WelcomeViewController.swift */,
+				181FDD6A2385421000111ED7 /* RegisterViewController.swift */,
+				181FDD6C2385422100111ED7 /* LoginViewController.swift */,
+				181FDD6E2385423000111ED7 /* ChatViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		181FDD682385419200111ED7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181FDD582385412300111ED7 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		181FDD692385419800111ED7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181FDD572385412300111ED7 /* ViewController.swift in Sources */,
+				181FDD572385412300111ED7 /* WelcomeViewController.swift in Sources */,
 				181FDD532385412300111ED7 /* AppDelegate.swift in Sources */,
 				181FDD552385412300111ED7 /* SceneDelegate.swift in Sources */,
+				181FDD6D2385422100111ED7 /* LoginViewController.swift in Sources */,
+				181FDD6F2385423000111ED7 /* ChatViewController.swift in Sources */,
+				181FDD6B2385421000111ED7 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
