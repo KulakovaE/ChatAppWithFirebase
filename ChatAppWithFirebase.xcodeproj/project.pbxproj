@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		181FDD6D2385422100111ED7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD6C2385422100111ED7 /* LoginViewController.swift */; };
 		181FDD6F2385423000111ED7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FDD6E2385423000111ED7 /* ChatViewController.swift */; };
 		187FB375238576CF00ADE934 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187FB374238576CF00ADE934 /* GoogleService-Info.plist */; };
+		18B8128A23889990007C7292 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8128923889990007C7292 /* Constants.swift */; };
 		4E4BD1356D397F922438AEB7 /* Pods_ChatAppWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EBDB250CDED54B8E72216D /* Pods_ChatAppWithFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		181FDD6C2385422100111ED7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		181FDD6E2385423000111ED7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		187FB374238576CF00ADE934 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18B8128923889990007C7292 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44EBDB250CDED54B8E72216D /* Pods_ChatAppWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1646C284730254D104CCDE /* Pods-ChatAppWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		E27CD62696B9D809540E8FC4 /* Pods-ChatAppWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.release.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		181FDD692385419800111ED7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18B8128923889990007C7292 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				181FDD532385412300111ED7 /* AppDelegate.swift in Sources */,
 				181FDD552385412300111ED7 /* SceneDelegate.swift in Sources */,
 				181FDD6D2385422100111ED7 /* LoginViewController.swift in Sources */,
+				18B8128A23889990007C7292 /* Constants.swift in Sources */,
 				181FDD6F2385423000111ED7 /* ChatViewController.swift in Sources */,
 				181FDD6B2385421000111ED7 /* RegisterViewController.swift in Sources */,
 			);
