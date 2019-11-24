@@ -321,6 +321,9 @@
                                         </constraints>
                                         <color key="tintColor" name="BrandLightPurple"/>
                                         <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="bpY-WL-yux" eventType="touchUpInside" id="Fj3-i2-NKc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandPurple"/>
