@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ChatViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     
@@ -33,40 +33,40 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages() {
-       
+        
         
         db.collection(K.FStore.collectionName)
             .order(by: K.FStore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
-             
-            self.messages = []
-            
-            if let e = error {
-                print("There was an issue retreiving data: \(e)")
-            } else {
-                if let snapshotDocuments = querySnapshot?.documents {
-                    for doc in snapshotDocuments {
-                        let data = doc.data()
-                        if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
-                            let newMessage = Message(sender: messageSender, body: messageBody)
-                            self.messages.append(newMessage)
-                            
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
+                
+                self.messages = []
+                
+                if let e = error {
+                    print("There was an issue retreiving data: \(e)")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
+                                let newMessage = Message(sender: messageSender, body: messageBody)
+                                self.messages.append(newMessage)
+                                
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
                             }
                         }
                     }
                 }
-            }
         }
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
         do {
-          try Auth.auth().signOut()
+            try Auth.auth().signOut()
             navigationController?.popToRootViewController(animated: true)
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
     
@@ -86,6 +86,7 @@ class ChatViewController: UIViewController {
         }
     }
 }
+//MARK: - UITableViewDataSource
 
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,9 +94,24 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
         if let cell = cell as? MessageCell {
-            cell.messageLabel.text = messages[indexPath.row].body
+            cell.messageLabel.text = message.body
+            //This is messafe from current user
+            if message.sender == Auth.auth().currentUser?.email {
+                cell.leftImageView.isHidden = true
+                cell.rightImageView.isHidden = false
+                cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
+                cell.messageLabel.textColor = UIColor(named: K.BrandColors.purple)
+            } else {
+                //This is message from another sender
+                cell.leftImageView.isHidden = false
+                cell.rightImageView.isHidden = true
+                cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.purple)
+                cell.messageLabel.textColor = UIColor(named: K.BrandColors.lightPurple)
+            }
         }
         return cell
     }
